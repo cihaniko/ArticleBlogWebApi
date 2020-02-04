@@ -40,6 +40,7 @@ namespace ArticleBlogWebApi.Controllers
         [HttpPost]
         public ActionResult<Article> Create(Article Article)
         {
+            Article.Created_At = DateTime.UtcNow;
             _articleService.Create(Article);
 
             return CreatedAtRoute("GetArticle", new { id = Article.Id.ToString() }, Article);
@@ -49,6 +50,9 @@ namespace ArticleBlogWebApi.Controllers
         public IActionResult Update(string id, Article ArticleIn)
         {
             var Article = _articleService.Get(id);
+
+            ArticleIn.Created_At = Article.Created_At;
+            ArticleIn.Updated_At = DateTime.UtcNow;
 
             if (Article == null)
             {
