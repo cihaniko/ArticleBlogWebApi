@@ -18,9 +18,6 @@
 >         	"ConnectionString": "mongodb://localhost:27017",
 >         	"DatabaseName": "ArticlesDb"    
 
-
-  
-
  4. If all steps are completed, run the project and go to url 
 
 >  localhost:5000/swagger     (5000-> or your another ports)
@@ -34,15 +31,16 @@
 		  "category": "Category",
 		  "author": "Author"
 }
- 7. Now, Let's list, search, edit and delete some data from SwaggerUI
- 
 
-     *Get​/api​/Article*
-     *Get​/api​/Article/{id}*
-	  *PUT​/api​/Article​/{id}*
-		*Delete/api/Article/{id}*
-     
+7. Now, Let's list, search, edit and delete some data from SwaggerUI 
+>    *Get​/api​/Article*
+
+>    Get​/api​/Article/{id}*
+
+>    Put​/api​/Article/{id}*
+
+>    Delete​/api​/Article/{id}*
 ## Questions
- - DB Layer was used as Slingleton with the help of Dependency Injection (DI)
+ - DB Layer was used as Singleton with the help of Dependency Injection (DI)
  - Net.Core - Web API2 - MongoDB - SwaggerUI was used within the project. I use these technologies regularly.
 - Additional features such as comment, like, elastic search can be added
