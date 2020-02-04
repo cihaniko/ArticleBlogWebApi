@@ -35,7 +35,7 @@ namespace ArticleBlogWebApi
             services.AddSingleton<IDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<ArticleDatabaseSettings>>().Value);
 
-            services.AddScoped(typeof(IDBRepository<>),typeof(MongoDBRepository<>));
+            services.AddSingleton(typeof(IDBRepository<>),typeof(MongoDBRepository<>));
 
             services.AddControllers();
 
